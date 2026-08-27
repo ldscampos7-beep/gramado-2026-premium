@@ -71,40 +71,40 @@ div[data-testid="stMetric"] {
 ROTEIRO = {
     "Dia 2": {
         "data": "02/09/2026",
-        "titulo": "Chegada + Centro de Gramado",
+        "titulo": "Chegada + Centro + Fondue",
         "icone": "✨",
-        "resumo": "Primeiro contato com Gramado, sem correria, aproveitando o centro a pé.",
-        "jantar": "Jantar econômico no centro",
-        "look": "Polo preta + jeans slim lavado + Nike preto. Moletom preto na mão. À noite, bomber preta se esfriar.",
+        "resumo": "Chegada tranquila, almoço econômico, primeiro passeio pelo centro e fondue à noite.",
+        "jantar": "Maison de La Fondue",
+        "look": "Viagem/chegada: polo preta + jeans slim + Adidas ou Nike preto. Moletom preto na mão. Para o centro e fondue: camisa social marrom + calça escura + bomber preta Marfino; tênis marrom acamurçado. Se esfriar mais, acrescente suéter.",
         "itens": [
             ("14:00", "Check-in no Hotel Laghetto Premio", HOTEL, "hotel"),
-            ("15:30", "Lago Joaquina Rita Bier", "Lago Joaquina Rita Bier, Gramado RS", "a pé"),
-            ("16:10", "Rótula das Bandeiras", "Rótula das Bandeiras, Gramado RS", "a pé"),
-            ("16:30", "Rua Torta", "Rua Torta, Gramado RS", "a pé"),
-            ("17:00", "Praça das Etnias / Casa do Colono", "Praça das Etnias, Gramado RS", "a pé"),
-            ("17:40", "Igreja Matriz São Pedro", "Igreja Matriz São Pedro, Gramado RS", "a pé"),
-            ("18:00", "Fonte do Amor Eterno", "Fonte do Amor Eterno, Gramado RS", "a pé"),
-            ("18:20", "Palácio dos Festivais", "Palácio dos Festivais, Gramado RS", "a pé"),
-            ("18:40", "Rua Coberta", "Rua Coberta, Gramado RS", "a pé"),
-            ("19:30", "Jantar econômico no centro", "Centro de Gramado RS", "a pé"),
-            ("21:00", "Passeio noturno pela Borges de Medeiros", "Avenida Borges de Medeiros, Gramado RS", "a pé"),
-            ("21:30", "Chocolate quente / sobremesa", "Rua Coberta, Gramado RS", "a pé"),
+            ("14:30", "Almoço — Sabor da Nonna (Plano A; chegar antes do encerramento do almoço)", "Restaurante Sabor da Nonna, Gramado RS", "a pé/Uber"),
+            ("14:40+", "Plano B se atrasar — Empório Benetti", "Empório Benetti, Gramado RS", "a pé/Uber"),
+            ("15:30", "Retorno ao hotel / descanso e organização", HOTEL, "hotel"),
+            ("17:00", "Rua Coberta", "Rua Coberta, Gramado RS", "a pé"),
+            ("17:30", "Igreja Matriz São Pedro", "Igreja Matriz São Pedro, Gramado RS", "a pé"),
+            ("17:45", "Fonte do Amor Eterno", "Fonte do Amor Eterno, Gramado RS", "a pé"),
+            ("18:00", "Chocolate / café no centro", "Centro de Gramado RS", "a pé"),
+            ("18:30", "Palácio dos Festivais + Borges de Medeiros", "Palácio dos Festivais, Gramado RS", "a pé"),
+            ("20:00", "Jantar — Maison de La Fondue", "Maison de La Fondue, Gramado RS", "a pé/Uber"),
+            ("22:00", "Caminhada noturna pelo centro / Rua Coberta", "Rua Coberta, Gramado RS", "a pé"),
+            ("22:30", "Retorno ao Hotel Laghetto Premio", HOTEL, "a pé/Uber"),
         ]
     },
     "Dia 3": {
         "data": "03/09/2026",
         "titulo": "City Tour Gramado + Canela",
         "icone": "🚌",
-        "resumo": "Dia completo com a Turistur; à noite, fondue e centro iluminado.",
-        "jantar": "Fondue com promoção",
-        "look": "Oxford azul-clara + calça azul-escura + casaco sarja cáqui/oliva + Nike preto.",
+        "resumo": "Dia completo com a Turistur; à noite, jantar leve e centro iluminado.",
+        "jantar": "Jantar leve / livre no centro",
+        "look": "City Tour Gramado/Canela: camiseta básica preta ou marrom + calça escura + Nike preto + casaco cáqui. Leve o suéter na mochila. À noite: polo preta + calça azul-escura/chumbo + casaco marrom Bluestel + tênis marrom acamurçado.",
         "itens": [
             ("Manhã", "Café da manhã no hotel", HOTEL, "hotel"),
             ("Dia", "City Tour Gramado + Canela com a Turistur", "Gramado RS", "transfer"),
             ("Paradas", "Lago Negro, Mini Mundo e atrações do roteiro", "Lago Negro, Gramado RS", "city tour"),
             ("Canela", "Caracol / Bondinhos conforme o pacote", "Bondinhos Aéreos Parques da Serra, Canela RS", "city tour"),
             ("18:30", "Retorno ao hotel e descanso", HOTEL, "transfer"),
-            ("20:00", "Noite do fondue", "Centro de Gramado RS", "a pé/Uber"),
+            ("20:00", "Jantar leve / escolha livre no centro", "Centro de Gramado RS", "a pé/Uber"),
             ("21:45", "Rua Coberta e centro iluminado", "Rua Coberta, Gramado RS", "a pé"),
         ]
     },
@@ -114,7 +114,7 @@ ROTEIRO = {
         "icone": "🚂",
         "resumo": "Passeio clássico da Serra Gaúcha e noite especial de pizza em Gramado.",
         "jantar": "Pizzaria Scur ou Cara de Mau",
-        "look": "Camisa salmão ou suéter bege + calça cinza/chumbo + bomber preta + tênis marrom/camurçado.",
+        "look": "Maria Fumaça: polo preta ou camiseta básica marrom + calça jeans/escura + Adidas + bomber preta Marfino. À noite para pizza/Cara de Mau: camisa social preta + calça chumbo/preta + suéter + casaco marrom Bluestel ou bomber preta + tênis marrom acamurçado.",
         "itens": [
             ("Manhã", "Café da manhã no hotel", HOTEL, "hotel"),
             ("Dia", "Passeio Maria Fumaça", "Maria Fumaça, Bento Gonçalves RS", "transfer"),
@@ -130,7 +130,7 @@ ROTEIRO = {
         "icone": "🌲",
         "resumo": "Dia inteiro em Nova Petrópolis e fechamento da noite com churrasco gaúcho.",
         "jantar": "Gramado e Brasa ou similar",
-        "look": "Camiseta preta + suéter preto/bege + calça escura + Nike preto. Segunda pele se estiver frio.",
+        "look": "Nova Petrópolis: camiseta básica preta + segunda pele se necessário + suéter + calça escura + Nike preto + casaco cáqui. Leve o casaco marrom Bluestel se a previsão indicar frio/vento. À noite: camisa social marrom ou terceira camisa social + calça escura + bomber preta Marfino + tênis marrom acamurçado.",
         "itens": [
             ("Manhã", "Saída para Nova Petrópolis", "Nova Petrópolis RS", "transfer"),
             ("Parada 1", "Praça das Flores", "Praça das Flores, Nova Petrópolis RS", "passeio"),
@@ -150,7 +150,7 @@ ROTEIRO = {
         "icone": "✈️",
         "resumo": "Últimas compras, café tranquilo e retorno.",
         "jantar": "Sem jantar programado",
-        "look": "Polo/camiseta básica + jeans + Nike preto + moletom preto conforme a temperatura.",
+        "look": "Manhã livre/retorno: segunda polo preta ou camiseta marrom + jeans/calça confortável + Adidas ou Nike preto + moletom preto. Casaco na mão conforme o frio. Bermuda/short apenas se a manhã estiver realmente amena.",
         "itens": [
             ("08:00", "Café da manhã no hotel", HOTEL, "hotel"),
             ("09:00", "Última caminhada pelo centro", "Centro de Gramado RS", "a pé"),
@@ -163,6 +163,36 @@ ROTEIRO = {
 }
 
 RESTAURANTES = [
+    {
+        "nome": "Sabor da Nonna",
+        "tipo": "Almoço / buffet",
+        "icone": "🍛",
+        "preco": "≈ R$ 55 por pessoa (confirmar valor na data)",
+        "perfil": "Plano A para o almoço de chegada: comida caseira e bom custo-benefício. Como você chega às 14h, vá logo após o check-in.",
+        "endereco": "Restaurante Sabor da Nonna, Gramado RS",
+        "premium": False,
+        "noite": "Dia 2 — almoço"
+    },
+    {
+        "nome": "Empório Benetti",
+        "tipo": "Almoço tardio / Plano B",
+        "icone": "🍽️",
+        "preco": "≈ R$ 40–60 por pessoa (estimativa; confirmar no local)",
+        "perfil": "Alternativa para o dia da chegada se o check-in ou transfer atrasar e você perder o horário do buffet.",
+        "endereco": "Empório Benetti, Gramado RS",
+        "premium": False,
+        "noite": "Dia 2 — almoço"
+    },
+    {
+        "nome": "Maison de La Fondue",
+        "tipo": "Fondue",
+        "icone": "🫕",
+        "preco": "≈ R$ 115 por pessoa em oferta consultada (confirmar antes da viagem)",
+        "perfil": "Escolha para a primeira noite: sequência de fondue e clima clássico de Gramado.",
+        "endereco": "Maison de La Fondue, Gramado RS",
+        "premium": False,
+        "noite": "Dia 2"
+    },
     {
         "nome": "La Grotta Prime",
         "tipo": "Fondue",
@@ -211,21 +241,28 @@ MALA = [
     "Cartão YUO / Elo",
     "Carregador do celular",
     "Power bank",
-    "Polo preta",
-    "Camisetas básicas preta e marrom",
-    "Camisas: salmão, areia/marrom e Oxford azul-clara",
-    "2 a 3 calças escuras",
-    "Suéter bege",
-    "Suéter preto",
+    "Bomber preta Marfino tipo corta-vento",
+    "Casaco marrom Bluestel",
     "Casaco sarja cáqui/oliva",
-    "Bomber preta",
     "Moletom preto com capuz",
-    "Segunda pele",
+    "2 suéteres",
+    "2 polos pretas",
+    "2 camisetas básicas: preta e marrom",
+    "2 camisas sociais: preta e marrom",
+    "Opcional: 1 terceira camisa social para variar os looks",
+    "3 a 4 calças (jeans + azul-escura/chumbo/preta)",
+    "Bermuda e shorts para hotel/dia ameno",
+    "Segunda pele (parte de cima e, se tiver, parte de baixo)",
     "Nike preto",
-    "Tênis marrom/camurçado ou slip-on",
+    "Adidas",
+    "Tênis marrom acamurçado",
     "Meias extras",
+    "Roupa íntima",
+    "Pijama / roupa confortável",
     "Guarda-chuva compacto",
-    "Medicamentos de uso pessoal",
+    "Medicamentos e itens de higiene pessoal",
+    "Comprar em Gramado se necessário: gorro, cachecol e luvas",
+    "Plano para frio forte: considerar alugar/comprar casaco mais pesado somente se a previsão justificar",
 ]
 
 ECONOMIA = [
@@ -611,6 +648,12 @@ with tabs[7]:
         """,
         unsafe_allow_html=True
     )
+    st.markdown("### 🧥 Estratégia da mala")
+    st.write("**Casacos:** bomber preta Marfino + marrom Bluestel + cáqui + moletom preto.")
+    st.write("**Camadas:** 2 suéteres + segunda pele. Isso permite adaptar sem levar casaco pesado demais.")
+    st.write("**Calçados:** Nike preto para caminhar, Adidas como alternativo e marrom acamurçado para looks mais arrumados.")
+    st.write("**Social:** camisa preta + marrom; uma terceira é opcional, não obrigatória.")
+    st.write("**Frio excepcional:** gorro, cachecol e luvas podem ser comprados em Gramado; casaco pesado só se a previsão próxima da viagem indicar necessidade.")
 
 st.divider()
 st.caption("Gramado 2026 • versão final do guia pessoal • preços, horários e condições sujeitos a alteração.")

@@ -27,3 +27,14 @@ Versão final do app da viagem.
 3. Envie `app.py`, `requirements.txt` e `README.md`.
 4. Confirme a substituição e clique em Commit changes.
 5. O Streamlit atualiza automaticamente.
+
+
+## V5 — Dia 2 atualizado
+- Almoço: Sabor da Nonna; Empório Benetti como plano B em caso de atraso.
+- Centro de Gramado no fim da tarde.
+- Jantar: Maison de La Fondue.
+- Caminhada noturna pela Rua Coberta e centro.
+
+
+## V6 — Mala e looks
+Checklist e looks atualizados conforme a mala real, com estratégia de camadas e opção de comprar acessórios de frio em Gramado.
