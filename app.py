@@ -5,20 +5,17 @@ from datetime import datetime
 import json
 
 st.set_page_config(
-    page_title="Gramado 2026 — Premium",
+    page_title="Gramado 2026 — V3",
     page_icon="🏔️",
     layout="centered",
     initial_sidebar_state="expanded"
 )
 
 # =========================
-# TEMA / CSS
+# VISUAL
 # =========================
 st.markdown("""
 <style>
-:root {
-    --radius: 20px;
-}
 .block-container {
     padding-top: 0.8rem;
     padding-bottom: 4rem;
@@ -36,38 +33,41 @@ st.markdown("""
     border: 1px solid rgba(128,128,128,.20);
     margin: 8px 0 12px 0;
 }
-.card h4 { margin: 0 0 6px 0; }
 .muted { opacity: .74; font-size: .92rem; }
 .badge {
-    display: inline-block;
-    padding: 4px 9px;
-    border-radius: 999px;
-    border: 1px solid rgba(128,128,128,.25);
-    margin-right: 5px;
-    margin-bottom: 5px;
-    font-size: .82rem;
+    display:inline-block;
+    padding:4px 9px;
+    border-radius:999px;
+    border:1px solid rgba(128,128,128,.25);
+    margin-right:5px;
+    margin-bottom:5px;
+    font-size:.82rem;
 }
 div[data-testid="stMetric"] {
-    border: 1px solid rgba(128,128,128,.18);
-    border-radius: 16px;
-    padding: 10px;
-}
-[data-testid="stSidebar"] {
-    border-right: 1px solid rgba(128,128,128,.14);
+    border:1px solid rgba(128,128,128,.18);
+    border-radius:16px;
+    padding:10px;
 }
 .stButton>button, .stLinkButton>a {
-    border-radius: 12px !important;
+    border-radius:12px !important;
 }
 </style>
 """, unsafe_allow_html=True)
 
-HOTEL = "Hotel Laghetto Premio, Gramado, RS"
+# =========================
+# CONSTANTES
+# =========================
+HOTEL_NAME = "Hotel Laghetto Premio"
+HOTEL_ADDRESS = "Av. Borges de Medeiros, 1533, Gramado, RS"
+HOTEL = f"{HOTEL_NAME}, {HOTEL_ADDRESS}"
 
 ROTEIRO = {
     "Dia 2": {
         "titulo": "Chegada + Centro de Gramado",
         "icone": "✨",
-        "resumo": "Primeiro contato com Gramado, caminhando pelo centro sem pressa.",
+        "resumo": "Primeiro contato com Gramado, sem correria, aproveitando o centro a pé.",
+        "restaurante": "Jantar econômico no centro",
+        "look": "Polo preta + jeans slim lavado + Nike preto. Moletom preto na mão. À noite, bomber preta se esfriar.",
         "itens": [
             ("14:00", "Check-in no Hotel Laghetto Premio", HOTEL),
             ("15:30", "Lago Joaquina Rita Bier", "Lago Joaquina Rita Bier, Gramado RS"),
@@ -86,11 +86,13 @@ ROTEIRO = {
     "Dia 3": {
         "titulo": "City Tour Gramado + Canela",
         "icone": "🚌",
-        "resumo": "Dia de conhecer as principais atrações com logística pronta.",
+        "resumo": "Dia completo com a Turistur; à noite, fondue e centro iluminado.",
+        "restaurante": "Fondue econômico / promoção",
+        "look": "Oxford azul-clara + calça azul-escura + casaco sarja cáqui/oliva + Nike preto.",
         "itens": [
             ("Manhã", "Café da manhã no hotel", HOTEL),
             ("Dia", "City Tour Gramado + Canela com a Turistur", "Gramado RS"),
-            ("Paradas", "Lago Negro, Mini Mundo e atrações do roteiro", "Lago Negro, Gramado RS"),
+            ("Paradas", "Lago Negro, Mini Mundo e demais atrações do roteiro", "Lago Negro, Gramado RS"),
             ("Canela", "Caracol / Bondinhos conforme o pacote", "Bondinhos Aéreos Parques da Serra, Canela RS"),
             ("18:30", "Retorno ao hotel e descanso", HOTEL),
             ("20:00", "Noite do fondue", "Centro de Gramado RS"),
@@ -100,20 +102,24 @@ ROTEIRO = {
     "Dia 4": {
         "titulo": "Maria Fumaça + Noite da Pizza",
         "icone": "🚂",
-        "resumo": "Passeio clássico da Serra Gaúcha e noite especial de pizza.",
+        "resumo": "Dia de passeio clássico e noite de pizza em Gramado.",
+        "restaurante": "Scur ou Cara de Mau",
+        "look": "Camisa salmão ou suéter bege + calça cinza/chumbo + bomber preta + tênis marrom/camurçado.",
         "itens": [
             ("Manhã", "Café da manhã no hotel", HOTEL),
             ("Dia", "Passeio Maria Fumaça", "Maria Fumaça, Bento Gonçalves RS"),
             ("18:30", "Retorno para Gramado / hotel", HOTEL),
             ("19:30", "Banho e descanso", HOTEL),
-            ("21:00", "Pizza: Scur ou experiência Cara de Mau", "Centro de Gramado RS"),
+            ("21:00", "Pizza — Scur ou Cara de Mau", "Centro de Gramado RS"),
             ("Após", "Caminhada leve pelo centro", "Rua Coberta, Gramado RS"),
         ],
     },
     "Dia 5": {
         "titulo": "Nova Petrópolis + Churrasco",
         "icone": "🌲",
-        "resumo": "Dia inteiro em Nova Petrópolis e fechamento com churrasco gaúcho.",
+        "resumo": "Dia inteiro fora de Gramado; à noite, churrasco e despedida do centro.",
+        "restaurante": "Gramado e Brasa ou similar",
+        "look": "Camiseta preta + suéter preto/bege + calça escura + Nike preto. Segunda pele se estiver perto de 11 °C.",
         "itens": [
             ("Manhã", "Saída para Nova Petrópolis", "Nova Petrópolis RS"),
             ("Parada 1", "Praça das Flores", "Praça das Flores, Nova Petrópolis RS"),
@@ -130,7 +136,9 @@ ROTEIRO = {
     "Dia 6": {
         "titulo": "Manhã Livre + Aeroporto",
         "icone": "✈️",
-        "resumo": "Últimas compras, passeio leve e retorno.",
+        "resumo": "Últimas compras, café tranquilo e retorno.",
+        "restaurante": "Café/lanche leve se houver tempo",
+        "look": "Polo/camiseta básica + jeans + Nike preto + moletom preto conforme a temperatura.",
         "itens": [
             ("08:00", "Café da manhã no hotel", HOTEL),
             ("09:00", "Última caminhada pelo centro", "Centro de Gramado RS"),
@@ -148,7 +156,7 @@ RESTAURANTES = [
         "tipo": "Fondue",
         "icone": "🫕",
         "preco": "≈ R$ 70–110 por pessoa em promoções",
-        "perfil": "Custo-benefício para sequência de fondue.",
+        "perfil": "Boa opção para uma sequência de fondue sem ir para as casas mais caras.",
         "endereco": "Gramado RS",
         "premium": False,
     },
@@ -157,7 +165,7 @@ RESTAURANTES = [
         "tipo": "Pizza",
         "icone": "🍕",
         "preco": "≈ R$ 80–120 por pessoa",
-        "perfil": "Tradicional, central e mais econômica que pizzarias-show.",
+        "perfil": "Tradicional, central e mais racional que pizzarias-show.",
         "endereco": "Rua São Pedro, 660, Centro, Gramado RS",
         "premium": False,
     },
@@ -181,14 +189,9 @@ RESTAURANTES = [
     },
 ]
 
-LOOKS = {
-    "Dia 2": "Polo preta + jeans slim lavado + Nike preto. Moletom preto na mão. À noite, bomber preta se esfriar.",
-    "Dia 3": "Oxford azul-clara + calça azul-escura + casaco sarja cáqui/oliva + Nike preto.",
-    "Dia 4": "Camisa salmão ou suéter bege + calça cinza/chumbo + bomber preta + tênis marrom/camurçado.",
-    "Dia 5": "Camiseta preta + suéter preto/bege + calça escura + Nike preto. Segunda pele se amanhecer frio.",
-    "Dia 6": "Polo/camiseta básica + jeans + Nike preto + moletom preto conforme a temperatura.",
-}
-
+# =========================
+# HELPERS
+# =========================
 def fmt_money(v):
     return f"R$ {v:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
 
@@ -200,8 +203,19 @@ def maps_walk(dest):
         "&travelmode=walking"
     )
 
+def maps_drive(dest):
+    return (
+        "https://www.google.com/maps/dir/?api=1"
+        f"&origin={quote_plus(HOTEL)}"
+        f"&destination={quote_plus(dest)}"
+        "&travelmode=driving"
+    )
+
 def maps_place(dest):
     return f"https://www.google.com/maps/search/?api=1&query={quote_plus(dest)}"
+
+def weather_url():
+    return "https://www.google.com/search?q=" + quote_plus("previsão do tempo Gramado RS")
 
 def init_state():
     st.session_state.setdefault("saldo_inicial", 1000.0)
@@ -217,6 +231,9 @@ def total_geral():
 
 def saldo():
     return st.session_state.saldo_inicial - total_yuo()
+
+def gasto_dia(dia):
+    return sum(g["valor"] for g in st.session_state.gastos if g["dia"] == dia)
 
 def backup_json():
     return json.dumps({
@@ -241,6 +258,7 @@ st.markdown("""
         <span class="badge">🗺️ Roteiro</span>
         <span class="badge">🍽️ Gastronomia</span>
         <span class="badge">💳 YUO</span>
+        <span class="badge">🌦️ Tempo</span>
         <span class="badge">👕 Looks</span>
     </div>
 </div>
@@ -259,6 +277,13 @@ with m3:
 # =========================
 st.sidebar.title("🏔️ Gramado 2026")
 dia = st.sidebar.radio("Dia da viagem", list(ROTEIRO.keys()))
+
+st.sidebar.divider()
+st.sidebar.markdown("**🏨 Hotel**")
+st.sidebar.write(HOTEL_NAME)
+st.sidebar.caption(HOTEL_ADDRESS)
+
+st.sidebar.link_button("🌦️ Ver previsão do tempo", weather_url(), use_container_width=True)
 
 st.sidebar.divider()
 st.sidebar.markdown("**💳 Cartão alimentação**")
@@ -290,9 +315,9 @@ if upload:
         st.sidebar.error("Backup inválido.")
 
 # =========================
-# TABS
+# ABAS
 # =========================
-tabs = st.tabs(["🏠 Hoje", "🗺️ Roteiro", "🍽️ Comer", "💳 Gastos", "💡 Economia", "👕 Look"])
+tabs = st.tabs(["🏠 Hoje", "🗺️ Roteiro", "🍽️ Comer", "💳 Gastos", "🌦️ Tempo", "💡 Economia", "👕 Look"])
 
 with tabs[0]:
     info = ROTEIRO[dia]
@@ -317,19 +342,33 @@ with tabs[0]:
         st.markdown(
             f"""
             <div class="card">
-                <div class="muted">PRÓXIMA ATIVIDADE</div>
+                <div class="muted">O QUE FAZER AGORA</div>
                 <h4>{prox[0]} — {prox[1]}</h4>
             </div>
             """,
             unsafe_allow_html=True
         )
-        st.link_button("📍 Abrir no Maps", maps_place(prox[2]), use_container_width=True)
+        c1,c2 = st.columns(2)
+        with c1:
+            st.link_button("🚶 Como ir", maps_walk(prox[2]), use_container_width=True)
+        with c2:
+            st.link_button("📍 Abrir no Maps", maps_place(prox[2]), use_container_width=True)
 
-    st.markdown("### 💳 Situação do orçamento")
-    st.write(f"Você ainda tem **{fmt_money(saldo())}** disponíveis no YUO.")
+    st.markdown("### 🍽️ Sugestão da noite")
+    st.info(info["restaurante"])
+
+    st.markdown("### 💳 Orçamento do dia")
+    limite_sugerido = st.session_state.saldo_inicial / 5 if st.session_state.saldo_inicial > 0 else 0
+    usado_dia = gasto_dia(dia)
+    st.write(f"Meta diária sugerida: **{fmt_money(limite_sugerido)}**")
+    st.write(f"Gasto registrado neste dia: **{fmt_money(usado_dia)}**")
+    if limite_sugerido and usado_dia > limite_sugerido:
+        st.warning("Você ultrapassou a média diária sugerida.")
+    elif usado_dia > 0:
+        st.success("Gasto do dia dentro da média sugerida.")
 
     st.markdown("### 👕 Look sugerido")
-    st.info(LOOKS[dia])
+    st.info(info["look"])
 
 with tabs[1]:
     info = ROTEIRO[dia]
@@ -378,7 +417,7 @@ with tabs[2]:
                 <h4>{r['icone']} {r['nome']}</h4>
                 <div>{r['perfil']}</div>
                 <div style="margin-top:8px;"><b>{r['preco']}</b></div>
-                <div class="muted" style="margin-top:6px;">Confirmar YUO/Elo Voucher antes de ir.</div>
+                <div class="muted" style="margin-top:6px;">Confirmar YUO / Elo Voucher antes de ir.</div>
             </div>
             """,
             unsafe_allow_html=True
@@ -386,9 +425,9 @@ with tabs[2]:
 
         a,b,c = st.columns([1,1,1])
         with a:
-            st.link_button("🚶 Rota", maps_walk(r["endereco"]), use_container_width=True)
+            st.link_button("🚶 A pé", maps_walk(r["endereco"]), use_container_width=True)
         with b:
-            st.link_button("📍 Maps", maps_place(r["nome"] + ", Gramado RS"), use_container_width=True)
+            st.link_button("🚗 Carro/Uber", maps_drive(r["endereco"]), use_container_width=True)
         with c:
             fav = r["nome"] in st.session_state.favoritos
             if st.button("★ Favorito" if not fav else "✓ Favorito", key=f"fav_{r['nome']}", use_container_width=True):
@@ -450,36 +489,45 @@ with tabs[3]:
         st.metric("Saldo YUO", fmt_money(saldo()))
 
 with tabs[4]:
-    st.subheader("💡 Economia")
-    st.markdown("""
-**Aplicativos úteis**
-- **Laçador de Ofertas** — procure fondue, churrasco, restaurantes e atrações.
-- **Prime Gourmet** — pode compensar bastante para duas pessoas em ofertas de 2 por 1.
-- **Google Maps** — compare avaliação recente, distância e horário antes de sair.
+    st.subheader("🌦️ Tempo em Gramado")
+    st.write("Use a previsão principalmente para decidir entre camiseta, suéter, segunda pele e casaco.")
+    st.link_button("🌦️ Abrir previsão atual de Gramado", weather_url(), use_container_width=True)
 
-**Estratégia prática**
-- Use o centro de Gramado a pé sempre que der.
-- No City Tour, escolha as atrações pagas que realmente interessam.
-- Compare preço direto do restaurante com cupom antes de fechar.
-- Trate a **Cara de Mau** como gasto de experiência premium.
-- Confirme diretamente se o estabelecimento aceita **YUO / Elo Voucher**, porque aceitar Elo comum não garante saldo alimentação.
-""")
-    st.warning("Os valores do app são estimativas para planejamento e podem mudar.")
-
-with tabs[5]:
-    st.subheader("👕 Look do dia")
-    st.markdown(f"""
-    <div class="card">
-        <h4>{dia}</h4>
-        {LOOKS[dia]}
-    </div>
-    """, unsafe_allow_html=True)
-
-    st.markdown("### 🌡️ Camadas para 11–21 °C")
+    st.markdown("### Regra rápida para seus looks")
     st.write("**18–21 °C:** polo/camisa/camiseta")
     st.write("**15–18 °C:** + casaco")
     st.write("**11–15 °C:** + suéter")
     st.write("**Perto de 11 °C com vento:** segunda pele + suéter + casaco")
 
+with tabs[5]:
+    st.subheader("💡 Dicas de economia")
+    st.markdown("""
+- **Laçador de Ofertas:** confira fondue, churrasco, restaurantes e atrações.
+- **Prime Gourmet:** pode compensar bastante em promoções 2 por 1.
+- **Google Maps:** compare avaliações recentes e distância.
+- **Centro a pé:** do Laghetto Premio, caminhe para Rua Torta, Praça das Etnias, Igreja São Pedro e Rua Coberta.
+- **City Tour:** não compre ingresso em todas as paradas por impulso.
+- **YUO/Elo:** pergunte especificamente se aceita **Elo Voucher / cartão alimentação YUO**.
+- **Cara de Mau:** considere como experiência premium, não como refeição econômica.
+""")
+    st.warning("Preços no app são estimativas para planejamento e podem mudar.")
+
+with tabs[6]:
+    st.subheader("👕 Look do dia")
+    st.markdown(
+        f"""
+        <div class="card">
+            <h4>{dia}</h4>
+            {ROTEIRO[dia]['look']}
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+    st.markdown("### Camadas")
+    st.write("18–21 °C: leve")
+    st.write("15–18 °C: casaco")
+    st.write("11–15 °C: suéter + casaco")
+    st.write("Frio com vento: segunda pele + suéter + casaco")
+
 st.divider()
-st.caption("Gramado 2026 • Guia pessoal de viagem • preços e condições sujeitos a alteração.")
+st.caption("Gramado 2026 • V3 • roteiro pessoal • preços, horários e condições sujeitos a alteração.")
