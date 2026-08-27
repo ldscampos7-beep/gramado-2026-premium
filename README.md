@@ -1,26 +1,29 @@
 
-# Gramado 2026 — V3
+# Gramado 2026 — V4 Final
 
-Atualização do app Premium.
+Versão final do app da viagem.
 
-## Novidades
-- endereço do Hotel Laghetto Premio configurado como origem das rotas;
-- painel “O que fazer agora”;
-- botão para previsão do tempo;
-- orçamento médio diário dos R$ 1.000 do YUO;
-- gasto por dia;
-- restaurante sugerido para cada noite;
-- rotas a pé e por carro/Uber;
-- look do dia;
-- backup e restauração.
+## Inclui
+- painel “Hoje”
+- roteiro 2 a 6 de setembro
+- check-ins por atividade
+- endereço do Hotel Laghetto Premio como origem das rotas
+- Google Maps a pé e por carro/Uber
+- gastronomia: fondue, Scur, Cara de Mau e churrasco
+- favoritos
+- controle do cartão YUO
+- gastos gerais e por dia
+- orçamento diário médio
+- checklist completo da mala
+- previsão do tempo por atalho
+- dicas de economia
+- look por dia
+- backup e restauração
+- contagem regressiva para a viagem
 
-## Como atualizar o app que já está publicado
-1. Abra seu repositório do GitHub.
-2. Abra o arquivo `app.py`.
-3. Clique no ícone de lápis para editar, ou use **Add file > Upload files**.
-4. Substitua o `app.py` antigo por este novo `app.py`.
-5. Clique em **Commit changes**.
-6. O Streamlit Community Cloud normalmente detecta a alteração e atualiza o app automaticamente.
-7. Se não atualizar, abra o app e use **Manage app > Reboot app**.
-
-Também substitua `requirements.txt` se quiser manter os arquivos sincronizados.
+## Como atualizar
+1. Abra o repositório `gramado-2026-premium`.
+2. Add file > Upload files.
+3. Envie `app.py`, `requirements.txt` e `README.md`.
+4. Confirme a substituição e clique em Commit changes.
+5. O Streamlit atualiza automaticamente.
