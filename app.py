@@ -1,4 +1,56 @@
 
+# Dicas complementares para a viagem
+DICAS_GUIA = {
+ "Mala e clima": [
+  "Começo de setembro ainda é transição do inverno: confira a previsão 48–72 h antes.",
+  "Use camadas: camiseta/camisa + suéter ou moletom + casaco.",
+  "Leve guarda-chuva compacto ou capa de chuva.",
+  "Segunda pele fica na mala para os dias/noites mais frios.",
+  "Gorro, cachecol e luvas podem ser comprados em Gramado somente se houver necessidade."
+ ],
+ "Calçados": [
+  "Nike preto: principal para centro, city tour e caminhadas.",
+  "Adidas: reveze para descansar os pés.",
+  "Tênis marrom acamurçado: ótimo para jantar e looks arrumados; evite chuva forte.",
+  "Leve meias extras."
+ ],
+ "Economia": [
+  "Compare ingressos oficiais e aplicativos de desconto antes de comprar.",
+  "Evite atrações extras por impulso nos passeios já contratados.",
+  "Buffet livre ou por quilo ajuda a controlar o orçamento.",
+  "Confirme YUO/Elo no restaurante antes de pedir.",
+  "Leve água, guarda-chuva e itens básicos de casa para evitar preço turístico.",
+  "Mercados para economizar: Carrefour Gramado (Av. Borges de Medeiros, 2300), Rissul (Av. Borges de Medeiros, 3994), Supermercado Berti (Rua São Pedro, 835) e Dia Após Dia (Rua Tristão Oliveira, 239).",
+  "Compre água, frutas, lanches e bebidas no mercado para reduzir gastos durante os passeios."
+ ],
+ "Noite": [
+  "Depois do jantar, aproveite Rua Coberta, Igreja São Pedro e Borges de Medeiros a pé.",
+  "Deixe o fondue para uma noite mais fria.",
+  "Intercale jantar especial e jantar econômico.",
+  "Não sobrecarregue as noites após os passeios longos dos dias 3, 4 e 5."
+ ]
+}
+
+DICAS_ESTACAO = {
+ "Primavera": ["Camadas leves", "Corta-vento na mochila", "Tênis confortável", "Óculos e protetor solar", "No início de setembro, mantenha casaco e segunda pele disponíveis."],
+ "Inverno": ["Sobreposição de roupas", "Segunda pele térmica", "Gorro, luvas e cachecol", "Calçado fechado e meia adequada"],
+ "Outono": ["Camadas", "Casaco médio", "Calçado fechado", "Guarda-chuva compacto"],
+ "Verão": ["Roupas leves", "Casaco leve para a noite", "Capa de chuva compacta", "Protetor solar"]
+}
+
+RESTAURANTES_EXTRAS = [
+ "Fondue — Versoi",
+ "Buffet — Sabor da Nonna ou Campo & Vinho",
+ "Churrasco — Churrascaria Gramadense",
+ "Sopa — Sopas da Serra",
+ "Pizza temática — Kongo",
+ "Lanche — Burger do Geraldo",
+ "Massas — Galeto Itália",
+ "Pizza temática — Cara de Mau",
+ "Hard Rock Cafe Gramado — Rua Wilma Dinnebier, 180; experiência temática com shows; trate como refeição especial, não como opção econômica."
+]
+
+
 import streamlit as st
 from urllib.parse import quote_plus
 from datetime import datetime, date
