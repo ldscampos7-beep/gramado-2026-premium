@@ -19,80 +19,106 @@ HOTEL = {
 ITINERARY = {
     "02/09 · Chegada + Centro": {
         "date": date(2026, 9, 2),
-        "summary": "Chegada tranquila, primeiro contato com Gramado e fondue à noite.",
-        "tip": "O Sabor da Nonna fecha cedo: se houver atraso, use o Plano B.",
-        "items": [
-            ("14h", "Check-in no Laghetto Premio", HOTEL["address"]),
-            ("14h30", "Almoço · Sabor da Nonna (Plano A)", "Restaurante Sabor da Nonna Gramado"),
-            ("Se atrasar", "Almoço · Empório Benetti (Plano B)", "Empório Benetti Gramado"),
-            ("15h30", "Descanso e organização no hotel", HOTEL["address"]),
-            ("17h", "Centro: Rua Coberta e Praça Major Nicoletti", "Rua Coberta Gramado"),
-            ("17h30", "Igreja São Pedro e Fonte do Amor Eterno", "Igreja Matriz São Pedro Gramado"),
-            ("18h", "Chocolate, café e caminhada pela Borges", "Avenida Borges de Medeiros Gramado"),
-            ("20h", "Jantar · Maison de La Fondue", "Maison de La Fondue Gramado"),
-            ("22h", "Caminhada noturna e retorno ao hotel", HOTEL["address"]),
-        ],
+        "summary": "Chegada, preparação para o frio, centro de Gramado e jantar com bom custo-benefício.",
+        "tip": "Faça as compras de inverno logo após chegar, antes do passeio pelo centro.",
+        "sections": {
+            "Manhã": [("Viagem", "Deslocamento para Gramado", HOTEL["address"])],
+            "Almoço": [
+                ("Após a chegada", "Almoço no Sabor da Nonna / buffet livre", "Restaurante Sabor da Nonna Gramado"),
+                ("Plano B", "Churrascaria Gramadense, se o horário for mais conveniente", "Churrascaria Gramadense Gramado"),
+            ],
+            "Tarde": [
+                ("14h", "Check-in no Laghetto Premio", HOTEL["address"]),
+                ("Logo após", "Aluguel de casaco pesado na Top 50", "Top 50 aluguel de roupas Gramado"),
+                ("Em seguida", "Lojinhas locais: comprar gorro, cachecol e luvas", "Lojas de roupas de inverno Centro Gramado"),
+                ("17h", "Rua Coberta, Igreja São Pedro, Fonte do Amor Eterno e Borges", "Rua Coberta Gramado"),
+            ],
+            "Lanche": [("Fim da tarde", "Chocolate ou café no centro, se houver vontade", "Centro Gramado")],
+            "Noite/Jantar": [
+                ("20h", "Jantar de bom custo-benefício · Campo & Vinho (rodízio de pizza)", "Campo e Vinho Gramado"),
+                ("Alternativa", "Churrascaria Gramadense", "Churrascaria Gramadense Gramado"),
+                ("Depois", "Caminhada noturna e retorno ao hotel", HOTEL["address"]),
+            ],
+        },
     },
     "03/09 · City Tour Gramado + Canela": {
         "date": date(2026, 9, 3),
-        "summary": "Dia completo com a Turistur; escolha apenas as atrações pagas prioritárias.",
-        "tip": "Confirme no voucher quais ingressos estão incluídos e leve água e corta-vento.",
-        "items": [
-            ("Manhã", "Café da manhã e saída para o City Tour", HOTEL["address"]),
-            ("Dia", "City Tour Gramado + Canela · Turistur", "Gramado Canela RS"),
-            ("Paradas", "Lago Negro, Mini Mundo e atrações do pacote", "Lago Negro Gramado"),
-            ("Canela", "Região do Caracol e demais paradas", "Parque do Caracol Canela"),
-            ("18h30", "Retorno ao hotel e descanso", HOTEL["address"]),
-            ("20h", "Jantar flexível · Versoi, Campo & Vinho ou Sopas da Serra", "Centro Gramado"),
-            ("21h45", "Rua Coberta e centro iluminado", "Rua Coberta Gramado"),
-        ],
+        "summary": "City Tour completo, almoço livre, pausa para hambúrguer e massas no jantar.",
+        "tip": "Jantar obrigatório no Galeto Itália; confirme o horário de retorno antes de reservar.",
+        "sections": {
+            "Manhã": [
+                ("Manhã", "Café da manhã no hotel", HOTEL["address"]),
+                ("Saída", "City Tour Gramado + Canela · Turistur", "Gramado Canela RS"),
+            ],
+            "Almoço": [("Durante o tour", "Almoço livre no passeio", "Gramado Canela RS")],
+            "Tarde": [("Passeio", "Lago Negro, atrações de Gramado, Canela e região do Caracol", "Parque do Caracol Canela")],
+            "Lanche": [("Pausa da tarde", "Hambúrguer no Burguer do Geraldo", "Burguer do Geraldo Gramado")],
+            "Noite/Jantar": [
+                ("Após o retorno", "Descanso e troca de roupa no hotel", HOTEL["address"]),
+                ("20h", "Jantar obrigatório · Massas no Galeto Itália", "Galeto Itália Gramado"),
+                ("Depois", "Rua Coberta e centro iluminado", "Rua Coberta Gramado"),
+            ],
+        },
     },
-    "04/09 · Maria Fumaça + Cara de Mau": {
+    "04/09 · Maria Fumaça + Fondue": {
         "date": date(2026, 9, 4),
-        "summary": "Passeio longo na Serra Gaúcha e experiência temática opcional à noite.",
-        "tip": "Cara de Mau é a opção premium; Scur ou Burger do Geraldo reduzem o gasto.",
-        "items": [
-            ("Manhã", "Café da manhã e saída para a Maria Fumaça", HOTEL["address"]),
-            ("Dia", "Passeio Maria Fumaça", "Maria Fumaça Bento Gonçalves"),
-            ("18h30", "Retorno a Gramado e descanso", HOTEL["address"]),
-            ("21h", "Saída para Cara de Mau (opção experiência)", "Cara de Mau Gramado"),
-            ("Alternativa", "Pizzaria Scur ou Burger do Geraldo", "Pizzaria Scur Gramado"),
-            ("Após jantar", "Retorno ao hotel", HOTEL["address"]),
-        ],
+        "summary": "Maria Fumaça, almoço livre, chocolate à tarde e fondue no Versoi.",
+        "tip": "Noite de fondue obrigatória no Versoi; reserve com antecedência.",
+        "sections": {
+            "Manhã": [
+                ("Manhã", "Café da manhã no hotel", HOTEL["address"]),
+                ("Saída", "Passeio Maria Fumaça", "Maria Fumaça Bento Gonçalves"),
+            ],
+            "Almoço": [("Durante o passeio", "Almoço livre no passeio", "Bento Gonçalves RS")],
+            "Tarde": [("Passeio", "Continuação da experiência da Maria Fumaça e retorno", "Maria Fumaça Bento Gonçalves")],
+            "Lanche": [("Pausa da tarde", "Chocolate e café na Chocolate Lugano", "Chocolate Lugano Gramado")],
+            "Noite/Jantar": [
+                ("Após o retorno", "Descanso no hotel", HOTEL["address"]),
+                ("20h", "Noite obrigatória de fondue · Versoi", "Versoi Gramado")
+            ],
+        },
     },
-    "05/09 · Nova Petrópolis + Noite especial": {
+    "05/09 · Nova Petrópolis + Kongo": {
         "date": date(2026, 9, 5),
-        "summary": "Cultura germânica, parques e paisagens; última noite completa em Gramado.",
-        "tip": "Dia longo: tênis confortável, camadas e bateria externa.",
-        "items": [
-            ("Manhã", "Saída para Nova Petrópolis", "Nova Petrópolis RS"),
-            ("Parada 1", "Praça das Flores e Labirinto Verde", "Labirinto Verde Nova Petrópolis"),
-            ("Parada 2", "Parque Aldeia do Imigrante", "Parque Aldeia do Imigrante"),
-            ("Almoço", "Restaurante econômico conforme a excursão", "Centro Nova Petrópolis"),
-            ("Tarde", "Parque Pedras do Silêncio", "Parque Pedras do Silêncio"),
-            ("Fim de tarde", "Ninho das Águias, se o clima permitir", "Ninho das Águias Nova Petrópolis"),
-            ("19h", "Retorno a Gramado e banho", HOTEL["address"]),
-            ("20h30", "Jantar · Churrascaria Gramadense ou Galeto Itália", "Centro Gramado"),
-            ("22h", "Última caminhada pelo centro", "Rua Coberta Gramado"),
-        ],
+        "summary": "Nova Petrópolis, almoço livre, pausa para caldo e pizzaria temática Kongo.",
+        "tip": "Jantar temático obrigatório na Kongo; confirme a sessão e faça reserva.",
+        "sections": {
+            "Manhã": [
+                ("Manhã", "Saída para Nova Petrópolis", "Nova Petrópolis RS"),
+                ("Passeio", "Praça das Flores, Labirinto Verde e Aldeia do Imigrante", "Parque Aldeia do Imigrante")
+            ],
+            "Almoço": [("Durante a excursão", "Almoço livre no passeio", "Centro Nova Petrópolis")],
+            "Tarde": [
+                ("Tarde", "Parque Pedras do Silêncio", "Parque Pedras do Silêncio"),
+                ("Fim da tarde", "Ninho das Águias, se o clima permitir", "Ninho das Águias Nova Petrópolis")
+            ],
+            "Lanche": [("Pausa da tarde", "Caldos na Sopas da Serra", "Sopas da Serra Gramado")],
+            "Noite/Jantar": [
+                ("Após o retorno", "Banho e descanso no hotel", HOTEL["address"]),
+                ("20h30", "Pizzaria temática obrigatória · Kongo", "Kongo Pizzaria Temática Gramado"),
+                ("Depois", "Última caminhada pelo centro", "Rua Coberta Gramado")
+            ],
+        },
     },
     "06/09 · Manhã livre + Aeroporto": {
         "date": date(2026, 9, 6),
-        "summary": "Manhã sem compromisso rígido para compras e despedida.",
-        "tip": "Confirme o transfer na véspera e volte ao hotel com boa margem.",
-        "items": [
-            ("8h", "Café da manhã e fechamento das malas", HOTEL["address"]),
-            ("9h", "Última caminhada pelo centro", "Rua Coberta Gramado"),
-            ("9h30", "Chocolates e lembranças", "Centro Gramado"),
-            ("10h30", "Igreja São Pedro e Rua Coberta", "Igreja Matriz São Pedro Gramado"),
-            ("Depois", "Retorno ao hotel e transfer", HOTEL["address"]),
-            ("Saída", "Aeroporto conforme o voucher", "Aeroporto Internacional Salgado Filho"),
-        ],
+        "summary": "Compras finais, uma única refeição antes da partida e retorno.",
+        "tip": "Escolha almoço ou lanche conforme o transfer; não planeje jantar.",
+        "sections": {
+            "Manhã": [
+                ("8h", "Café da manhã e fechamento das malas", HOTEL["address"]),
+                ("9h", "Última caminhada, chocolates e lembranças", "Rua Coberta Gramado")
+            ],
+            "Almoço": [("Antes da partida", "Almoço leve ou buffet livre, conforme o horário do transfer", "Centro Gramado")],
+            "Tarde": [("Com margem", "Retorno ao hotel e transfer para o aeroporto", HOTEL["address"])],
+            "Lanche": [("Alternativa ao almoço", "Lanche rápido antes da partida", "Centro Gramado")],
+            "Noite/Jantar": [("Retorno", "Sem jantar programado em Gramado", "Aeroporto Internacional Salgado Filho")],
+        },
     },
 }
 
 RESTAURANTS = [
-    ("Maison de La Fondue", "Fondue", "Especial", "Centro · jantar do dia 2"),
+    ("Versoi", "Fondue", "Especial", "Jantar fixado para o dia 4"),
     ("Cara de Mau", "Pizza temática", "Premium", "Experiência; reservar e conferir sessão"),
     ("Pizzaria Scur", "Pizza", "Intermediário", "Alternativa mais racional à temática"),
     ("Sabor da Nonna / Campo & Vinho", "Buffet caseiro", "Econômico", "Boa escolha de almoço"),
@@ -100,7 +126,7 @@ RESTAURANTS = [
     ("Churrascaria Gramadense", "Churrasco", "Intermediário", "Opção para a última noite"),
     ("Sopas da Serra", "Sopas", "Econômico", "Boa alternativa em noite fria"),
     ("Kongo", "Pizza temática", "Premium", "Compare com Cara de Mau antes de reservar"),
-    ("Burger do Geraldo", "Hambúrguer", "Econômico", "Jantar simples após passeio longo"),
+    ("Burguer do Geraldo", "Hambúrguer", "Econômico", "Lanche planejado para o dia 3"),
     ("Galeto Itália", "Galeto", "Intermediário", "Alternativa ao churrasco"),
     ("Hard Rock Cafe Gramado", "Americana / música", "Especial", "Rua Wilma Dinnebier, 180"),
 ]

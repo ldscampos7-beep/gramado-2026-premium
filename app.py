@@ -87,13 +87,17 @@ with tabs[0]:
     st.subheader(selected_day)
     st.write(day["summary"])
     st.info(day["tip"])
-    completed = sum(st.session_state.get(f"route_{selected_day}_{i}", False) for i in range(len(day["items"])))
-    st.progress(completed / len(day["items"]), text=f"{completed} de {len(day['items'])} etapas concluídas")
-    for i, (hour, activity, place) in enumerate(day["items"]):
-        st.markdown(f'<div class="card"><div class="eyebrow">{hour}</div><strong>{activity}</strong></div>', unsafe_allow_html=True)
-        c1, c2 = st.columns([1.25, 1])
-        c1.checkbox("Concluído", key=f"route_{selected_day}_{i}")
-        c2.link_button("Como chegar", maps_url(place), use_container_width=True)
+    all_items = [(section, item) for section, items in day["sections"].items() for item in items]
+    completed = sum(st.session_state.get(f"route_{selected_day}_{section}_{i}", False) for i, (section, _) in enumerate(all_items))
+    st.progress(completed / len(all_items), text=f"{completed} de {len(all_items)} etapas concluídas")
+    for section, items in day["sections"].items():
+        st.markdown(f"### {section}")
+        for hour, activity, place in items:
+            item_index = all_items.index((section, (hour, activity, place)))
+            st.markdown(f'<div class="card"><div class="eyebrow">{hour}</div><strong>{activity}</strong></div>', unsafe_allow_html=True)
+            c1, c2 = st.columns([1.25, 1])
+            c1.checkbox("Concluído", key=f"route_{selected_day}_{section}_{item_index}")
+            c2.link_button("Como chegar", maps_url(place), use_container_width=True)
     look_key = selected_day[:5]
     st.markdown("#### Look sugerido")
     st.write(LOOKS[look_key])
