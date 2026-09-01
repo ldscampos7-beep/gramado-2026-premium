@@ -87,10 +87,16 @@ with tabs[0]:
     st.subheader(selected_day)
     st.write(day["summary"])
     st.info(day["tip"])
-    all_items = [(section, item) for section, items in day["sections"].items() for item in items]
+    # Compatibilidade com backups/publicações anteriores, que usavam apenas
+    # a chave ``items``. Isso evita erro se app.py e data.py forem atualizados
+    # em momentos diferentes no Streamlit Community Cloud.
+    sections = day.get("sections")
+    if sections is None:
+        sections = {"Roteiro do dia": day.get("items", [])}
+    all_items = [(section, item) for section, items in sections.items() for item in items]
     completed = sum(st.session_state.get(f"route_{selected_day}_{section}_{i}", False) for i, (section, _) in enumerate(all_items))
     st.progress(completed / len(all_items), text=f"{completed} de {len(all_items)} etapas concluídas")
-    for section, items in day["sections"].items():
+    for section, items in sections.items():
         st.markdown(f"### {section}")
         for hour, activity, place in items:
             item_index = all_items.index((section, (hour, activity, place)))
