@@ -1,40 +1,25 @@
+# Gramado 2026
 
-# Gramado 2026 — V4 Final
+Guia pessoal em Streamlit para a viagem de 02 a 06/09/2026, otimizado para celular.
 
-Versão final do app da viagem.
+## Estrutura
 
-## Inclui
-- painel “Hoje”
-- roteiro 2 a 6 de setembro
-- check-ins por atividade
-- endereço do Hotel Laghetto Premio como origem das rotas
-- Google Maps a pé e por carro/Uber
-- gastronomia: fondue, Scur, Cara de Mau e churrasco
-- favoritos
-- controle do cartão YUO
-- gastos gerais e por dia
-- orçamento diário médio
-- checklist completo da mala
-- previsão do tempo por atalho
-- dicas de economia
-- look por dia
-- backup e restauração
-- contagem regressiva para a viagem
+- `app.py`: interface, navegação, checklists, gastos e backup.
+- `data.py`: roteiro, hotel, restaurantes, mercados, mala, looks e dicas.
+- `requirements.txt`: dependência usada pelo Streamlit Community Cloud.
 
-## Como atualizar
-1. Abra o repositório `gramado-2026-premium`.
-2. Add file > Upload files.
-3. Envie `app.py`, `requirements.txt` e `README.md`.
-4. Confirme a substituição e clique em Commit changes.
-5. O Streamlit atualiza automaticamente.
+Para futuras alterações de conteúdo, edite primeiro `data.py`. A interface só
+precisa ser alterada quando houver uma nova função ou mudança visual.
 
+## Rodar localmente
 
-## V5 — Dia 2 atualizado
-- Almoço: Sabor da Nonna; Empório Benetti como plano B em caso de atraso.
-- Centro de Gramado no fim da tarde.
-- Jantar: Maison de La Fondue.
-- Caminhada noturna pela Rua Coberta e centro.
+```bash
+python -m pip install -r requirements.txt
+streamlit run app.py
+```
 
+## Publicar
 
-## V6 — Mala e looks
-Checklist e looks atualizados conforme a mala real, com estratégia de camadas e opção de comprar acessórios de frio em Gramado.
+Envie os três arquivos para a raiz do repositório GitHub e configure `app.py`
+como arquivo principal no Streamlit Community Cloud. Os registros ficam na
+sessão do navegador; use o backup JSON regularmente.
